@@ -1,9 +1,13 @@
 package org.albert.entity;
 
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+
 import java.util.Objects;
 
+@Schema(name = "Product", description = "Product object")
 public class Product
 {
+    @Schema(required = true)
     private Long id;
     private String name;
 
