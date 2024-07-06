@@ -20,13 +20,13 @@ public class DatabaseInitializer {
     public void init() {
         String dropTable = "DROP TABLE IF EXISTS author;";
         String createTable = """
-            CREATE TABLE IF NOT EXISTS author (
-                id INTEGER PRIMARY KEY,
-                name VARCHAR(40) NOT NULL
-            );
-        """;
+                    CREATE TABLE IF NOT EXISTS author (
+                        id SERIAL PRIMARY KEY,
+                        name VARCHAR(40) NOT NULL
+                    );
+                """;
         String insert = """
-            INSERT INTO author VALUES (1, 'Fraz Bonaparta'), (2, 'Emil Sebe');
+            INSERT INTO author (name) VALUES ('Fraz Bonaparta'), ('Emil Sebe');
         """;
 
         pgPoolClient.query(dropTable).execute()
