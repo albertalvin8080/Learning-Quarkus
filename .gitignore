@@ -87,9 +87,10 @@ JPA_Hibernate/first-test/mysql-data/
 **/__pycache__
 **/.pytest_cache
 
-#**/mvnw
-#**/mvnw.cmd
-#**/.mvn
+**/client.keystore
+**/client.truststore
+**/server.keystore
+**/server.truststore
 
 -- TESTING --
 **/*.madmoiselle
