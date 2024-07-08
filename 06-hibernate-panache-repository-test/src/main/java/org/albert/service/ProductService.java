@@ -21,8 +21,8 @@ public class ProductService
     {
         return productRepository.findByIdOptional(id)
                 .map(prod -> {
-                    prod.name = product.name;
-                    prod.price = product.price;
+                    prod.setName(product.getName());
+                    prod.setPrice(product.getPrice());
                     productRepository.persist(prod);
                     return prod;
                 });

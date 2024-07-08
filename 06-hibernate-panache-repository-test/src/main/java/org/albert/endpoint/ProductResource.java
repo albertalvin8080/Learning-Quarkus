@@ -38,7 +38,7 @@ public class ProductResource
     public Response save(Product product)
     {
         return productService.save(product) ?
-                Response.created(URI.create("/product/" + product.id)).build() :
+                Response.created(URI.create("/product/" + product.getId())).build() :
                 Response.status(Response.Status.BAD_REQUEST).build();
     }
 
