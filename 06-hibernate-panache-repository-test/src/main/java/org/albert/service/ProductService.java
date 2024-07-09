@@ -6,6 +6,7 @@ import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import org.albert.entity.Product;
 import org.albert.repository.ProductRepository;
+import org.jboss.logging.Logger;
 
 import java.util.List;
 import java.util.Optional;
@@ -13,12 +14,15 @@ import java.util.Optional;
 @ApplicationScoped
 public class ProductService
 {
+    private final Logger log = Logger.getLogger(ProductService.class);
+
     @Inject
     ProductRepository productRepository;
 
     @Transactional
     public Optional<Product> updateProduct(Long id, Product product)
     {
+        log.debugf("Updating product %s", product.getName());
         return productRepository.findByIdOptional(id)
                 .map(prod -> {
                     prod.setName(product.getName());
@@ -36,6 +40,7 @@ public class ProductService
 
     public Optional<Product> findByNameOptional(String name)
     {
+        log.infof("Searching for product %s", name);
         return productRepository.find("SELECT p FROM Product p WHERE p.name = ?1", name)
                 .singleResultOptional();
     }
