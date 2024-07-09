@@ -1,4 +1,4 @@
-package org.albert.endpoint;
+package org.albert.endpoint.integration;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.*;
 @QuarkusTest
 @Tag("integration")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class ProductResourceTest
+class ProductResourceTestIT
 {
     @Test
     @Order(1)

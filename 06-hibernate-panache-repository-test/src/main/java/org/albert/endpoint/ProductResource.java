@@ -38,6 +38,7 @@ public class ProductResource
     public Response save(Product product)
     {
         return productService.save(product) ?
+                // You can only use product.getId() if it has been persisted first.
                 Response.created(URI.create("/product/" + product.getId())).build() :
                 Response.status(Response.Status.BAD_REQUEST).build();
     }
