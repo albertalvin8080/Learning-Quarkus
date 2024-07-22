@@ -1,0 +1,15 @@
+#version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:5.0.25
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./docker-data/mongo:/data
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+
+# docker exec -it mongodb bash -c "mongosh -u root -p root"

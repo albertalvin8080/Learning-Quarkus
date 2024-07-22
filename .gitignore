@@ -92,6 +92,8 @@ JPA_Hibernate/first-test/mysql-data/
 **/server.keystore
 **/server.truststore
 
+**/docker-data/
+
 -- TESTING --
 **/*.madmoiselle
 # TESTING COPY SH
