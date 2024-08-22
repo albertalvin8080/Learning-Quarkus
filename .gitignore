@@ -94,6 +94,5 @@ JPA_Hibernate/first-test/mysql-data/
 
 **/docker-data/
 
--- TESTING --
-**/*.madmoiselle
-# TESTING COPY SH
+#*/mvnw
+#*/mvnw.cmd
