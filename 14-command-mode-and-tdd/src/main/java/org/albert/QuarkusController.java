@@ -9,7 +9,8 @@ public class QuarkusController implements QuarkusApplication
     @Override
     public int run(String... args) throws Exception
     {
-        System.out.println(args[0]);
+        if(args.length > 0)
+            System.out.println(args[0]);
         Quarkus.waitForExit();
         return 0;
     }
