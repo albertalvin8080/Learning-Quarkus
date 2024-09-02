@@ -1,0 +1,4 @@
+CREATE TABLE BOOK (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(40)
+);
