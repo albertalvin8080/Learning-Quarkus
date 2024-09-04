@@ -1,11 +1,24 @@
 package org.albert.entity;
 
+import java.util.List;
+
 public class Post
 {
     private Integer id;
     private Integer userId;
     private String title;
     private String body;
+    private List<Comment> comment;
+
+    public List<Comment> getComment()
+    {
+        return comment;
+    }
+
+    public void setComment(List<Comment> comment)
+    {
+        this.comment = comment;
+    }
 
     public Integer getId()
     {

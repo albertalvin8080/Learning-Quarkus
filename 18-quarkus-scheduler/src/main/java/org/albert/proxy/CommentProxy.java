@@ -3,7 +3,6 @@ package org.albert.proxy;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.albert.entity.Comment;
-import org.albert.entity.Post;
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import java.util.List;
@@ -15,7 +14,7 @@ public interface CommentProxy
     @GET
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
-    List<Comment> getComment(@QueryParam("postId") Integer postId);
+    List<Comment> getComments(@QueryParam("postId") Integer postId);
 
 //    @GET
 //    @Path("")
