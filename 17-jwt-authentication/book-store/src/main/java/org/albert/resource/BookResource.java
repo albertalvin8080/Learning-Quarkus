@@ -30,6 +30,7 @@ public class BookResource
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAll()
     {
+        System.out.println(bookList);
         return Response.ok(bookList).build();
     }
 
