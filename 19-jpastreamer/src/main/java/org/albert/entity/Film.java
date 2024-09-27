@@ -69,13 +69,13 @@ public class Film
     @Column(name = "last_update")
     private Timestamp lastUpdate;
 
-    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, fetch = FetchType.EAGER)
     @JoinTable(
             name = "film_actor",
             joinColumns = @JoinColumn(name = "film_id"),
             inverseJoinColumns = @JoinColumn(name = "actor_id")
     )
-    @JsonIgnore
+    @JsonIgnore(value = false)
     private Set<Actor> actors;
 
     public Set<Actor> getActors()

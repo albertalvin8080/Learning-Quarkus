@@ -48,7 +48,7 @@ public class FilmResource
     @GET
     @Path("/{minLength}/{startsWith}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPagedFilmsProjection(
+    public Response filterByMinLengthAndTitleStartCharacters(
             @PathParam("minLength") short minLength,
             @PathParam("startsWith") String startsWith)
     {
@@ -62,7 +62,7 @@ public class FilmResource
     @GET
     @Path("/actors")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getPagedFilmsProjection()
+    public Response getAllFilmsAndActors()
     {
         return Response.ok(filmRepository.getAllFilmsAndActors()).build();
     }

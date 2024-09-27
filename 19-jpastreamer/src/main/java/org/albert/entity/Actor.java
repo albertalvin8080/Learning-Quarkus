@@ -1,5 +1,6 @@
 package org.albert.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.sql.Timestamp;
@@ -23,6 +24,7 @@ public class Actor
     @Column(name = "last_update")
     private Timestamp lastUpdate;
     @ManyToMany(mappedBy = "actors")
+    @JsonIgnore
     private Set<Film> films;
 
     public Set<Film> getFilms()

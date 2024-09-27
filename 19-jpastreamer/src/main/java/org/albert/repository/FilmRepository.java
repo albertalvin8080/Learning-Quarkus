@@ -81,10 +81,11 @@ public class FilmRepository
         /* ISSUE:
          * [Conversion from java.sql.Date to BLOB is not supported.]
          * OR
-         * [Data truncated for column 'release_year' at row 1] (for Timestamp)
+         * [Data truncated for column 'release_year' at row 1] (for Timestamp releaseYear)
          *
          * SOLUTION:
          * Change release_year type to Integer.
+         * (Hibernate may say that some print you a query to resolve some database issues, you can ignore it).
          * */
         jpaStreamer.stream(Film.class)
                 .filter(Film$.filmId.in(id))
