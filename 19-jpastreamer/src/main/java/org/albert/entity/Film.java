@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.Set;
 
@@ -11,6 +12,22 @@ import java.util.Set;
 @Table(name = "film", schema = "sakila", catalog = "")
 public class Film
 {
+    public Film(){}
+
+    public Film(Short filmId, String title, String description)
+    {
+        this.filmId = filmId;
+        this.title = title;
+        this.description = description;
+    }
+
+    public Film(Short filmId, String title, Short length)
+    {
+        this.filmId = filmId;
+        this.title = title;
+        this.length = length;
+    }
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "film_id")
@@ -22,8 +39,8 @@ public class Film
     @Column(name = "description")
     private String description;
     @Basic
-    @Column(name = "release_year", columnDefinition = "YEAR")
-    private Object releaseYear;
+    @Column(name = "release_year")
+    private Integer releaseYear;
     @Basic
     @Column(name = "language_id")
     private short languageId;
@@ -101,12 +118,12 @@ public class Film
         this.description = description;
     }
 
-    public Object getReleaseYear()
+    public Integer getReleaseYear()
     {
         return releaseYear;
     }
 
-    public void setReleaseYear(Object releaseYear)
+    public void setReleaseYear(Integer releaseYear)
     {
         this.releaseYear = releaseYear;
     }
