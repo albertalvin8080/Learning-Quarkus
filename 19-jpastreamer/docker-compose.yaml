@@ -1,0 +1,8 @@
+services:
+  sakila:
+    image: restsql/mysql-sakila
+    ports:
+      - 3306:3306
+
+# user: root
+# pass: sakila
